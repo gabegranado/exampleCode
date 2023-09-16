@@ -1,24 +1,50 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from "react";
+import Home from './pages/Home/Home';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
 
 function App() {
+  const [active, setActive] = useState("nav__menu");
+  const [icon, setIcon] = useState("nav__toggler");
+  const navToggle = () => {
+    if (active === "nav__menu") {
+      setActive("nav__menu nav__active");
+    } else setActive("nav__menu");
+
+    // Icon Toggler
+    if (icon === "nav__toggler") {
+      setIcon("nav__toggler toggle");
+    } else setIcon("nav__toggler");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <Router>
+
+    <nav className="nav">
+    <li className="nav__item">
+              <a href="/home" className="nav__link">
+                Test
+              </a>
+            </li>
+          <div onClick={navToggle} className={icon}>
+            <div className="line1"></div>
+            <div className="line2"></div>
+            <div className="line3"></div>
+          </div>
+        </nav>
+        <head>Test</head>
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          </Routes>
+  </Router>
+
+ 
   );
 }
 
