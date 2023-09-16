@@ -1,6 +1,9 @@
 import './App.css';
 import { useState } from "react";
 import Home from './pages/Home/Home';
+import Catalog from './pages/catalog/Catalog';
+import SensorDetails from './pages/SensorDetails/SensorDetails'
+
 import {
   BrowserRouter as Router,
   Route,
@@ -41,10 +44,10 @@ function App() {
         <head>Test</head>
         <Routes>
           <Route path="/home" element={<Home />} />
+          <Route path="/catalog" element={<Catalog />} />
+          <Route path="sensorDetails/:sensorId" element={<SensorDetails />} />
           </Routes>
   </Router>
-
- 
   );
 }
 

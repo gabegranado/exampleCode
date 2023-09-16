@@ -1,0 +1,11 @@
+{
+    "sensor1" : {
+        "location": "78744",
+        "phLevel": 2
+    },
+    "senesor2":
+    {
+        "location": "78742",
+        "phLevel": 5
+    }
+}
