@@ -14,11 +14,11 @@ const Catalog = () => {
 
     return (
      <div>
-        <ul>
-{mockSensor.map((data) => (
-<li>{data.sensorNum}</li>
-))}
-</ul>
+    <ul>
+        {mockSensor.map((data) => (
+        <li>{data.sensorNum}</li>
+        ))}
+    </ul>
      </div>
     );
   };
