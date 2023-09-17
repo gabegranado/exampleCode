@@ -36,4 +36,14 @@ export const getTestData = async (req, res) => {
     }
 }
 
+export const sensorDetail = async (req, res) => {
+    try {
+        const allTestData = await Test.find();
+        console.log("got test data");
+        res.status(200).json(allTestData);
+    } catch (error) {
+        res.status(409).json({ message: error.message });
+    }
+}
+
 export default router;

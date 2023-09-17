@@ -15,13 +15,13 @@ const Card = ({ sensorData }) => {
         if (parseInt(sensorData.testPPM) > 250) {
             return (
                 <Button   variant='outlined' background='green'
-            sx={{ color: 'green' }} onClick={switchPage}>Safe View Data</Button>
-            )
+                sx={{ color: 'red' }} onClick={switchPage}>UnSafe View Data</Button>
+                )
         }
         return (
             <Button   variant='outlined' background='green'
-            sx={{ color: 'red' }} onClick={switchPage}>UnSafe View Data</Button>
-            )
+        sx={{ color: 'green' }} onClick={switchPage}>Safe View Data</Button>
+        )
     }
 
 return (
