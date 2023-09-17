@@ -27,9 +27,7 @@ const Catalog = () => {
     return (
       <CardGrid>
       { sensorData.map((_, i) => (
-          <Card sensorData={_}>
-            <h2>Card {i + 1}</h2>
-          </Card>
+          <Card sensorData={_}/>
         ))
       }
     </CardGrid>

@@ -29,7 +29,6 @@ function App() {
 
   return (
   <Router>
-
     <nav className="nav">
     <li className="nav__item">
               <a href="/catalog" className="nav__link">
@@ -42,7 +41,6 @@ function App() {
             <div className="line3"></div>
           </div>
         </nav>
-        <head>Test</head>
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
