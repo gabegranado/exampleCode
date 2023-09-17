@@ -5,6 +5,9 @@ import { useDispatch } from "react-redux";
 import { getSensorData } from "../../actions/sensorData";
 import { useNavigate } from "react-router-dom";
 import ListElement from "./ListElement";
+import Card from "./Card";
+import CardGrid from "./CardGrid";
+import './style.css'
 
 const Catalog = () => {
     const navigate = useNavigate();
@@ -22,15 +25,14 @@ const Catalog = () => {
     //console.log("SENSOR DATA!: ", sensorData[0]);
 
     return (
-     <div>
-    <ul>
-        {sensorData.map((data) => (
-        <li>
-        <ListElement sensorData={data} ></ListElement>
-        </li>
-        ))}
-    </ul>
-     </div>
+      <CardGrid>
+      { sensorData.map((_, i) => (
+          <Card sensorData={_}>
+            <h2>Card {i + 1}</h2>
+          </Card>
+        ))
+      }
+    </CardGrid>
     );
   };
   

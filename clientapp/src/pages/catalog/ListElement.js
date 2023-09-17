@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
+import Button from '@mui/material/Button';
 
 const ListElement = ({ sensorData }) => {
     const navigate = useNavigate();
@@ -10,8 +11,11 @@ const ListElement = ({ sensorData }) => {
 
     return (
         <div>
-            <l1>{sensorData.testSensorLocation}       </l1>
-            <button onClick={switchPage}>GO TO</button>
+            <l1>{sensorData.testSensorLocation}    </l1>
+            <Button onClick={switchPage} variant="contained">Go To</Button>
+            <div>
+                <l1>{sensorData.testSensorLocation}</l1>
+            </div>
         </div>
     );
 }

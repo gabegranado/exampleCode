@@ -32,8 +32,8 @@ function App() {
 
     <nav className="nav">
     <li className="nav__item">
-              <a href="/home" className="nav__link">
-                Test
+              <a href="/catalog" className="nav__link">
+                Water Stats
               </a>
             </li>
           <div onClick={navToggle} className={icon}>
