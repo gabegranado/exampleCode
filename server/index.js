@@ -5,6 +5,7 @@ import cors from 'cors';
 import sprintf from 'sprintf';
 
 import sensorDataRoute from './routes/sensorDataAPI.js';
+import smsRoute from './routes/smsAPI.js';
 
 import * as CONFIG from "../config.json" assert { type: "json" };
 var dbPsw = CONFIG.default.dbPassword;
@@ -18,6 +19,7 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(cors());
 
 app.use('/sensorData', sensorDataRoute)
+app.use('/sms', smsRoute)
 
 mongoose.connect(CONNECTION_URL, function(err) {
     if (err) {

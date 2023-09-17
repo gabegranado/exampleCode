@@ -2,7 +2,8 @@ import './App.css';
 import { useState } from "react";
 import Home from './pages/Home/Home';
 import Catalog from './pages/catalog/Catalog';
-import SensorDetails from './pages/SensorDetails/SensorDetails'
+import SensorDetails from './pages/SensorDetails/SensorDetails';
+import Test from './pages/test/Test';
 
 import {
   BrowserRouter as Router,
@@ -45,6 +46,7 @@ function App() {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
+          <Route path="/test" element={<Test />} />
           <Route path="sensorDetails/:sensorId" element={<SensorDetails />} />
           </Routes>
   </Router>

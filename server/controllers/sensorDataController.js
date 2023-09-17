@@ -3,7 +3,12 @@ import mongoose from 'mongoose';
 import nodemailer from 'nodemailer';
 import Test from '../models/testModel.js';
 
+import * as CONFIG from "../../config.json" assert { type: "json" };
+var emailPassword = CONFIG.default.emailPassword;
+var email = CONFIG.default.email;
+
 const router = express.Router();
+
 
 export const createTestData = async (req, res) => {
     const { testSensorId, testSensorLocation, testPPM, testPH } = req.body;
@@ -22,8 +27,6 @@ export const createTestData = async (req, res) => {
 }
 
 export const getTestData = async (req, res) => {
-
-
     try {
         const allTestData = await Test.find();
         console.log("got test data");
