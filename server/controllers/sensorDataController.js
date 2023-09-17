@@ -1,6 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
-
+import nodemailer from 'nodemailer';
 import Test from '../models/testModel.js';
 
 const router = express.Router();
@@ -22,6 +22,8 @@ export const createTestData = async (req, res) => {
 }
 
 export const getTestData = async (req, res) => {
+
+
     try {
         const allTestData = await Test.find();
         console.log("got test data");

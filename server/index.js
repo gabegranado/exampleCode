@@ -6,7 +6,9 @@ import sprintf from 'sprintf';
 
 import sensorDataRoute from './routes/sensorDataAPI.js';
 
-const dbPsw = "57xljKpNyhRxNWrz";
+import * as CONFIG from "../config.json" assert { type: "json" };
+var dbPsw = CONFIG.default.dbPassword;
+
 const app = express();
 const PORT = 3000;
 const CONNECTION_URL = sprintf("mongodb+srv://casgrana:%s@cluster1.dgf2xh7.mongodb.net/?retryWrites=true&w=majority", dbPsw);
