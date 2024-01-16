@@ -2,12 +2,22 @@ import  React, {useState, useEffect} from  "react"
 import  *  as  Realm  from  "realm-web";
 import { useDispatch } from "react-redux";
 import { getSensorData } from "../../actions/sensorData";
+import { useParams } from "react-router-dom";
 
 const Test = () => {
    const dispatch = useDispatch();
    const  app = new  Realm.App({ id:  "application-0-kiwue"});
    const [user, setUser] = useState();
    const [events, setEvents] = useState([]);
+   const params = useParams();
+   console.log("test");
+   console.log(params);
+   var sensorId;
+   for (var key in params) {
+       if (key === "sensorId") {
+           sensorId = params[key];
+       }
+     }
 
    useEffect(() => {
     const  login = async () => {
